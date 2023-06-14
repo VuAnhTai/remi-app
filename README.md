@@ -1,34 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MUST IGNORE .env file
 
-## Getting Started
+# Make sure you prepare API for app
 
-First, run the development server:
+## Reference
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+https://nextjs.org/docs
+Node: 16.18.0, npm: 8.19.2, Yarn: 1.22.19
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Code Style and Standards
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+https://github.com/airbnb/javascript
+https://github.com/airbnb/javascript/tree/master/react
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Add package
 
-## Learn More
+```bash
+`npm install <package>`
+# for dev
+`npm install <dev_package> --save-dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+## For develop
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# 1. Change .env.example => .env
+# 2. Run local API or change NEXT_PUBLIC_API_URI
+# 3. Start app with dev
+`npm install`
+`npm run dev`
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## For testing
 
-## Deploy on Vercel
+```bash
+#1. Run app first
+`npm run dev`
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Process github
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+#1. Checkout branch develop and pull latest
+`git checkout develop`
+`git pull origin develop`
+#2. Create new branch
+`git checkout -b "<name>[<numberticket>]<title>"`
+#3. Commit
+`git commit -m "<type>[#<numberticket>] <Message>"`
+type     | Mean
+-------- | --------
+feat     | Introduces a new feature to the codebase.
+fix      | Patches a bug in your codebase.
+docs     | Introduces changes to the documentation.
+chore    | Introduces a small change of the tools, script no production code change.
+test     | Usually adding missing tests, refactoring tests; no production code change.
+style    | Usually using for format code no production code change.
+refactor | Refactoring production code, eg. renaming a variable name of meet.
+release  | Release the changes to production.
+#4. Create PR + add teamate reivew (Michael, doanlecong, tina or tai)
+```
