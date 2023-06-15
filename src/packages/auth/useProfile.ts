@@ -1,7 +1,4 @@
-import { useServerSidePropsContext } from '@/ssr/ServerSidePropsContext';
 import React, { useEffect } from 'react';
-import useSWR from 'swr';
-import { ProfileApis } from '@/rest/private/profile';
 import { Profile } from '@/common/types';
 import { LocalStorageUtils } from '@/common/utils';
 import { USER_KEY } from '@/env/constants';

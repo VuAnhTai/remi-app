@@ -54,7 +54,7 @@ myAxios.interceptors.request.use(
 myAxios.interceptors.response.use(
   function (response) {
     // Do something with response data
-    return { ...response.data };
+    return response.data;
   },
   function (error: AxiosError) {
     const path = location.pathname;

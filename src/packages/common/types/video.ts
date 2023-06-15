@@ -2,12 +2,13 @@ export type Video = {
   id: string;
   title: string;
   description: string;
-  thumbnail: string;
-  videoUrl: string;
-  createdAt: string;
-  updatedAt: string;
+  url: string;
   user: {
-    id: string;
     email: string;
   };
+};
+export type VideoForm = {
+  title: string;
+  description: string;
+  url: string;
 };

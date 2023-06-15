@@ -1,5 +1,9 @@
 export type Fn = (...args: any[]) => any;
 
+export type Dict = {
+  [key: string]: any;
+};
+
 export type ClassName = {
   className?: string;
   testId?: string;

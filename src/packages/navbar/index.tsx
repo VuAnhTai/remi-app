@@ -8,25 +8,39 @@ import { useForm } from 'react-hook-form';
 import { shareApi } from '@/rest/private/video';
 import router from 'next/router';
 import { Button } from '@/common/headless/Button';
+import { YoutubePattern } from '@/common/constants';
+import { VideoForm } from '@/common/types';
+import { useToast } from '@/common/hooks/useToast';
 
-const Navbar = () => {
+type Props = {
+  onSuccess?: () => void;
+};
+const Navbar = ({ onSuccess }: Props) => {
   const { logout } = useAuth();
   const { email } = useProfile();
+  const { toastError } = useToast();
   const [isOpenMobile, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { isOpen, openModal, closeModal } = useControlModal();
-  const methods = useForm({
+  const methods = useForm<VideoForm>({
     defaultValues: {
-      amount: 0,
+      title: '',
+      url: '',
+      description: '',
     },
   });
 
-  const onSubmit = async (data: any) => {
-    setIsSubmitting(true);
-    await shareApi(data);
-    setIsSubmitting(false);
-
-    router.push('/');
+  const onSubmit = async (data: VideoForm) => {
+    try {
+      setIsSubmitting(true);
+      await shareApi(data);
+      closeModal();
+      onSuccess?.();
+    } catch (error: any) {
+      toastError(error?.message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -81,17 +95,34 @@ const Navbar = () => {
         <Form methods={methods} onSubmit={onSubmit}>
           <Form.Input
             className='mb-6'
-            label='Bid Price'
-            name='amount'
-            type='number'
+            label='Title'
+            name='title'
             rules={{
               required: {
                 value: true,
-                message: 'Please enter your bid price',
+                message: 'Please enter your title',
               },
             }}
           />
-          <Form.ErrorMessage name='amount' />
+          <Form.ErrorMessage name='title' />
+          <Form.Input
+            className='mb-6'
+            label='Youtube URL'
+            name='url'
+            rules={{
+              required: {
+                value: true,
+                message: 'Please enter your url',
+              },
+              pattern: {
+                value: YoutubePattern,
+                message: 'Please enter a valid youtube url',
+              },
+            }}
+          />
+          <Form.ErrorMessage name='url' />
+          <Form.Input className='mb-6' label='Description' name='description'></Form.Input>
+          <Form.ErrorMessage name='description' />
           <div className='flex justify-end'>
             <button onClick={closeModal} className='mr-5 border px-4 py-2 rounded-lg'>
               Close
@@ -100,7 +131,7 @@ const Navbar = () => {
               type='submit'
               disabled={isSubmitting}
               className='bg-indigo-600 text-white px-4 py-2 rounded-lg'>
-              {isSubmitting ? 'Biding...' : 'Bid'}
+              {isSubmitting ? 'Submitting...' : 'Submit'}
             </button>
           </div>
         </Form>

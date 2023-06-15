@@ -2,7 +2,11 @@ import Head from 'next/head';
 import { Children } from '../common/types';
 import Navbar from '../navbar';
 
-const PrivateLayout = ({ children }: {} & Children) => {
+type Props = {
+  onSuccess?: () => void;
+};
+
+const PrivateLayout = ({ children, onSuccess }: Props & Children) => {
   return (
     <>
       <Head>
@@ -11,7 +15,7 @@ const PrivateLayout = ({ children }: {} & Children) => {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/images/favicon.ico' />
       </Head>
-      <Navbar />
+      <Navbar onSuccess={onSuccess} />
       <main className='flex-grow'>{children}</main>
     </>
   );
