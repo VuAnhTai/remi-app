@@ -1,12 +1,15 @@
 import Head from 'next/head';
 import { Children } from '../common/types';
 import Navbar from '../navbar';
+import { useSocket } from '@/common/hooks/useSocket';
 
 type Props = {
   onSuccess?: () => void;
 };
 
 const PrivateLayout = ({ children, onSuccess }: Props & Children) => {
+  useSocket();
+
   return (
     <>
       <Head>

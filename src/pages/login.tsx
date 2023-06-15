@@ -23,8 +23,8 @@ const Login: React.FC = () => {
     try {
       await loginApi({ email, password });
       router.push('/');
-    } catch (error) {
-      setErrorMessage('Invalid email or password');
+    } catch (error: any) {
+      setErrorMessage(error.message);
     }
   };
 

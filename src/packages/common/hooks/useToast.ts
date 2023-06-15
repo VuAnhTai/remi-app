@@ -11,16 +11,16 @@ const defaultOptions: ToastOptions = {
 };
 
 export function useToast() {
-  const toastError = (message: string, options: ToastOptions = {}) => {
+  const toastError = (message: React.ReactNode, options: ToastOptions = {}) => {
     toast.error(message, { ...defaultOptions, ...options });
   };
-  const toastSuccess = (message: string, options: ToastOptions = {}) => {
+  const toastSuccess = (message: React.ReactNode, options: ToastOptions = {}) => {
     toast.success(message, { ...defaultOptions, ...options });
   };
-  const toastInfo = (message: string, options: ToastOptions = {}) => {
+  const toastInfo = (message: React.ReactNode, options: ToastOptions = {}) => {
     toast.info(message, { ...defaultOptions, ...options });
   };
-  const toastWarn = (message: string, options: ToastOptions = {}) => {
+  const toastWarn = (message: React.ReactNode, options: ToastOptions = {}) => {
     toast.warn(message, { ...defaultOptions, ...options });
   };
 
