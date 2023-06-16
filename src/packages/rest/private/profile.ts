@@ -1,4 +1,4 @@
-import { Profile } from '@/auth/types';
+import { Profile } from '@/common/types';
 import { RestApiConfig, RestApis } from '@/rest/apis';
 
 const get = (config?: RestApiConfig) => {
