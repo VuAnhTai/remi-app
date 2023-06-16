@@ -2,12 +2,16 @@ import { useEffect, useMemo } from 'react';
 import createSocket from '../utils/socket';
 import { LocalStorageUtils } from '../utils';
 import { ACCESS_TOKEN_KEY } from '@/env/constants';
-import { EVENT_SOCKET } from '../constants';
+import { EVENT_SOCKET, EventValues } from '../constants';
 import { Video } from '../types';
 import { useToast } from './useToast';
 import { useProfile } from '@/auth/useProfile';
 
-export const useSocket = () => {
+type Socket = {
+  on?: (event: EventValues, data: any) => void;
+};
+
+export const useSocket = ({ on }: Socket) => {
   const { toastInfo } = useToast();
   const { email } = useProfile();
   const token = useMemo(() => LocalStorageUtils.get(ACCESS_TOKEN_KEY), []);
@@ -23,6 +27,8 @@ export const useSocket = () => {
         return;
       }
 
+      on?.(EVENT_SOCKET.NOTIFICATION, data);
+
       toastInfo(
         <div>
           <div>{data.user.email} shared a video</div>
@@ -34,5 +40,5 @@ export const useSocket = () => {
     return () => {
       socket.disconnect();
     };
-  }, [email, toastInfo, token]);
+  }, [email, on, toastInfo, token]);
 };

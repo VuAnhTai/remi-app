@@ -2,13 +2,28 @@ import Head from 'next/head';
 import { Children } from '../common/types';
 import Navbar from '../navbar';
 import { useSocket } from '@/common/hooks/useSocket';
+import { EVENT_SOCKET, EventValues } from '@/common/constants';
+import { useCallback } from 'react';
 
 type Props = {
   onSuccess?: () => void;
 };
 
 const PrivateLayout = ({ children, onSuccess }: Props & Children) => {
-  useSocket();
+  const on = useCallback(
+    (event: EventValues, data: any) => {
+      switch (event) {
+        case EVENT_SOCKET.NOTIFICATION:
+          onSuccess?.();
+          break;
+        default:
+          break;
+      }
+    },
+    [onSuccess]
+  );
+
+  useSocket({ on });
 
   return (
     <>
