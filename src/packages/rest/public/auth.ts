@@ -8,7 +8,6 @@ export const loginApi = async (data: UserLogin): Promise<any> => {
     '/auth/login',
     data
   )) as unknown as LoginResponse;
-  console.log(token, user);
   LocalStorageUtils.set(ACCESS_TOKEN_KEY, token);
   LocalStorageUtils.set(USER_KEY, JSON.stringify(user));
 };
