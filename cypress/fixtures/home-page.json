@@ -1,0 +1,18 @@
+{
+  "locator": {
+    "logo": "logo",
+    "email": "email",
+    "share_video": "share-video",
+    "share_video_mb": "share-video-mb",
+    "signout": "signout",
+    "signout_mb": "signout-mb",
+    "toggle_menu": "toggle-menu",
+    "item": "item"
+  },
+  "labels": {
+    "logo": "MOVIES FUNNY",
+    "email": "Email address",
+    "share_video": "Share video",
+    "signout": "Sign out"
+  }
+}

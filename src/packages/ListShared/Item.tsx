@@ -8,7 +8,7 @@ type Props = {
 };
 export const Item = ({ data }: Props) => {
   return (
-    <div className='grid grid-cols-1 lg:grid-cols-2 my-4 shadow-xl'>
+    <div className='grid grid-cols-1 lg:grid-cols-2 my-4 shadow-xl' data-testid='item'>
       <div className=' text-center w-full h-[200px]'>
         <VideoPlayer url={data.url} />
       </div>

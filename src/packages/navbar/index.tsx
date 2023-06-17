@@ -48,12 +48,14 @@ const Navbar = ({ onSuccess }: Props) => {
       <nav className='bg-gray-800'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 container'>
           <div className='flex items-center justify-between h-16 text-white'>
-            <div className='flex-shrink-0  text-4xl'>MOVIES FUNNY</div>
+            <div className='flex-shrink-0 text-4xl' data-testid='logo'>
+              MOVIES FUNNY
+            </div>
             <div className='hidden lg:block'>
               <div className='ml-4 flex items-center md:ml-6 gap-3'>
-                <div>Welcome {email}</div>
-                <Button text='Share a movie' handleLink={openModal} />
-                <Button text='Logout' handleLink={logout} />
+                <div data-testid='email'>Welcome {email}</div>
+                <Button text='Share a movie' handleLink={openModal} data-testid='share-video' />
+                <Button text='Logout' handleLink={logout} data-testid='signout' />
               </div>
             </div>
             <div className='-mr-2 flex lg:hidden items-center gap-3'>
@@ -61,7 +63,8 @@ const Navbar = ({ onSuccess }: Props) => {
               <button
                 onClick={() => setIsOpen(!isOpenMobile)}
                 className='bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white'
-                aria-label='Toggle menu'>
+                aria-label='Toggle menu'
+                data-testid='toggle-menu'>
                 <svg className='h-6 w-6' stroke='currentColor' fill='none' viewBox='0 0 24 24'>
                   <path
                     strokeLinecap='round'
@@ -76,13 +79,15 @@ const Navbar = ({ onSuccess }: Props) => {
                   <div className='py-1 bg-white rounded-md shadow-xs'>
                     <button
                       onClick={openModal}
-                      className='w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'>
-                      Share a movie
+                      className='w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                      data-testid='share-video-mb'>
+                      Share a video
                     </button>
                     <button
                       onClick={logout}
-                      className='w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'>
-                      Logout
+                      className='w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                      data-testid='signout-mb'>
+                      Sign out
                     </button>
                   </div>
                 </div>

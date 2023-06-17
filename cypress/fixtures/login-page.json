@@ -1,0 +1,21 @@
+{
+  "data_input": {
+    "email": "dev@remitano.com",
+    "password": "12345678"
+  },
+  "locator": {
+    "email": "email",
+    "password": "password",
+    "signin": "signin",
+    "signup": "signup",
+    "error": "error",
+    "title": "title"
+  },
+  "labels": {
+    "title": "Sign in to your account",
+    "email": "Email address",
+    "password": "Password",
+    "signin": "Sign in",
+    "signup": "Sign up"
+  }
+}

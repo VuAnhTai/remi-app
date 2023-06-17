@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { AuthProvider, useAuth } from '@/packages/common/hooks/useAuth';
-import { LocalStorageUtils } from '@/packages/common/utils';
-import { ACCESS_TOKEN_KEY } from '@/env/constants';
 import { loginApi } from '@/rest/public/auth';
 
 const Login: React.FC = () => {
@@ -33,8 +31,10 @@ const Login: React.FC = () => {
       <div className='min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8'>
         <div className='max-w-md w-full space-y-3'>
           <div>
-            <h2 className='mt-6 text-center text-3xl font-extrabold text-gray-900'>
-              Log in to your account
+            <h2
+              className='mt-6 text-center text-3xl font-extrabold text-gray-900'
+              data-testid='title'>
+              Sign in to your account
             </h2>
           </div>
           {errorMessage && (
@@ -60,6 +60,7 @@ const Login: React.FC = () => {
                   placeholder='Email address'
                   value={email}
                   onChange={e => setEmail(e.target.value)}
+                  data-testid='email'
                 />
               </div>
               <div>
@@ -76,6 +77,7 @@ const Login: React.FC = () => {
                   placeholder='Password'
                   value={password}
                   onChange={e => setPassword(e.target.value)}
+                  data-testid='password'
                 />
               </div>
             </div>
@@ -83,7 +85,8 @@ const Login: React.FC = () => {
             <div>
               <button
                 type='submit'
-                className='group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'>
+                className='group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500'
+                data-testid='signin'>
                 <span className='absolute left-0 inset-y-0 flex items-center pl-3'>
                   <svg
                     className='h-5 w-5 text-blue-500 group-hover:text-blue-400'
@@ -104,8 +107,11 @@ const Login: React.FC = () => {
           </form>
 
           <div className='text-sm text-center mt-3'>
-            <a href='register' className='font-medium text-blue-600 hover:text-blue-500'>
-              Register
+            <a
+              href='register'
+              className='font-medium text-blue-600 hover:text-blue-500'
+              data-testid='signup'>
+              Sign up
             </a>
           </div>
         </div>
