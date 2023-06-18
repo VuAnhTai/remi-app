@@ -5,8 +5,9 @@
 ## Reference
 
 ```bash
-https://nextjs.org/docs
 Node: 16.18.0, npm: 8.19.2, Yarn: 1.22.19
+Next: 13.1.6, React: 18.2.0
+Cypress: 12.14.0
 ```
 
 ## Code Style and Standards
@@ -16,13 +17,15 @@ https://github.com/airbnb/javascript
 https://github.com/airbnb/javascript/tree/master/react
 ```
 
-## Add package
+## Install
 
+````bash
+## Add package
 ```bash
 `npm install <package>`
 # for dev
 `npm install <dev_package> --save-dev
-```
+````
 
 ## For develop
 
@@ -34,11 +37,38 @@ https://github.com/airbnb/javascript/tree/master/react
 `npm run dev`
 ```
 
-## For testing
+## For production
 
 ```bash
-#1. Run app first
-`npm run dev`
+# 1. Change .env.example => .env
+# 2. Run local API or change NEXT_PUBLIC_API_URI
+# 3. Build app
+`npm install`
+`npm run build`
+# 4. Start app with start
+`npm run start`
+```
+
+## For test
+
+```bash
+# Test e2e
+# 1. Run check CI/CD
+`npm run e2e:headless`
+# 2. Run to develop
+`npm run e2e`
+
+# Test component
+# 1. Run check CI/CD
+`npm run component:ci`
+# 2. Run to develop
+`npm run component`
+```
+
+## For lint
+
+```bash
+`npm run lint`
 ```
 
 ## Process github
