@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { Profile } from '@/common/types';
 import { LocalStorageUtils } from '@/common/utils';
 import { USER_KEY } from '@/env/constants';
+import type { Profile } from '@/common/types';
 
 export function useProfile() {
   const [profile, setProfile] = React.useState<Profile>({

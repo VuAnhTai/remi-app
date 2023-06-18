@@ -1,6 +1,6 @@
 import { API_URI } from '@/packages/env/constants';
 import { RestApis } from '../apis';
-import { Video, VideoForm } from '@/common/types';
+import { type Video, type VideoForm } from '@/common/types';
 
 export const getListSharedApi = async (): Promise<Video[]> => {
   return RestApis.get(`${API_URI}/shared-urls`);

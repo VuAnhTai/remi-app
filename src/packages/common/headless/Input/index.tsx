@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { HTMLInputProps } from '@/common/types/htmlElements';
+import { type HTMLInputProps } from '@/common/types/htmlElements';
 import { forwardRef, useCallback, useImperativeHandle, useRef, useState } from 'react';
 import { useControllable } from '@/common/hooks/useControllable';
 

@@ -9,7 +9,7 @@ import { shareApi } from '@/rest/private/video';
 import router from 'next/router';
 import { Button } from '@/common/headless/Button';
 import { YoutubePattern } from '@/common/constants';
-import { VideoForm } from '@/common/types';
+import { type VideoForm } from '@/common/types';
 import { useToast } from '@/common/hooks/useToast';
 
 type Props = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Fn } from '../types';
+import { type Fn } from '../types';
 import { isFunction } from 'swr/_internal';
 
 export type UseControllableProps<T = any> = {

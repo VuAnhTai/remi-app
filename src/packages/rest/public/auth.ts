@@ -1,4 +1,4 @@
-import { LoginResponse, UserLogin } from '@/packages/common/types/auth';
+import { type LoginResponse, type UserLogin } from '@/packages/common/types/auth';
 import { ACCESS_TOKEN_KEY, API_URI, USER_KEY } from '@/packages/env/constants';
 import { LocalStorageUtils } from '@/common/utils';
 import { RestApis } from '../apis';

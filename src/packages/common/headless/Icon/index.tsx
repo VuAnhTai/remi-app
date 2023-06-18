@@ -1,4 +1,4 @@
-import { Dict } from '@/common/types';
+import { type Dict } from '@/common/types';
 import React from 'react';
 import ThumbUp from './icons/thumb-up.svg';
 import ThumbDown from './icons/thumb-down.svg';

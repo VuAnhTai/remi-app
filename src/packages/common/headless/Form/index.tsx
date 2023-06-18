@@ -1,7 +1,12 @@
-import { FieldValues, FormProvider, SubmitHandler, UseFormReturn } from 'react-hook-form';
-import { Field, FieldProps } from './Field';
-import { Input, InputProps } from '../Input';
-import { HTMLDivProps } from '@/common/types/htmlElements';
+import {
+  type FieldValues,
+  FormProvider,
+  type SubmitHandler,
+  type UseFormReturn,
+} from 'react-hook-form';
+import { Field, type FieldProps } from './Field';
+import { Input, type InputProps } from '../Input';
+import { type HTMLDivProps } from '@/common/types/htmlElements';
 import { ErrorMessage } from './ErrorMessage';
 import classNames from 'classnames';
 

@@ -1,4 +1,4 @@
-import axios, { AxiosError, AxiosRequestConfig } from 'axios';
+import axios, { type AxiosError, type AxiosRequestConfig } from 'axios';
 import axiosRetry, { isNetworkOrIdempotentRequestError } from 'axios-retry';
 import { customAlphabet } from 'nanoid';
 import { ACCESS_TOKEN_KEY, API_URI, USER_KEY } from '@/env/constants';

@@ -1,5 +1,5 @@
-import { RefObject, useCallback, useEffect } from 'react';
-import { RegisterOptions, get, useController, useFormContext } from 'react-hook-form';
+import { useCallback, useEffect, type RefObject } from 'react';
+import { get, useController, useFormContext, type RegisterOptions } from 'react-hook-form';
 
 export type Props<T = any> = {
   rules?: RegisterOptions;

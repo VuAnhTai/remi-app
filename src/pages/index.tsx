@@ -3,7 +3,7 @@ import PrivateLayout from '@/packages/layout/PrivateLayout';
 import { getListSharedApi } from '@/rest/private/video';
 import useSWR from 'swr';
 import { ListShared } from '@/ListShared';
-import { Video } from '@/common/types';
+import { type Video } from '@/common/types';
 
 export default function Home() {
   const { data: listItem, mutate } = useSWR<Video[]>(`/items`, () => {

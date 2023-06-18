@@ -1,5 +1,5 @@
-import { Profile } from '@/common/types';
-import { RestApiConfig, RestApis } from '@/rest/apis';
+import { type Profile } from '@/common/types';
+import { type RestApiConfig, RestApis } from '@/rest/apis';
 
 const get = (config?: RestApiConfig) => {
   return RestApis.get<Profile>('/users/me', config);

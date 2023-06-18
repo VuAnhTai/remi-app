@@ -2,8 +2,8 @@ import { useEffect, useMemo } from 'react';
 import createSocket from '../utils/socket';
 import { LocalStorageUtils } from '../utils';
 import { ACCESS_TOKEN_KEY } from '@/env/constants';
-import { EVENT_SOCKET, EventValues } from '../constants';
-import { Video } from '../types';
+import { EVENT_SOCKET, type EventValues } from '../constants';
+import { type Video } from '../types';
 import { useToast } from './useToast';
 import { useProfile } from '@/auth/useProfile';
 

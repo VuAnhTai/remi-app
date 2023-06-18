@@ -1,4 +1,4 @@
-import Cookies, { CookieAttributes } from 'js-cookie';
+import Cookies, { type CookieAttributes } from 'js-cookie';
 import { isSafari } from 'react-device-detect';
 
 import { IS_DEV } from '@/env/constants';

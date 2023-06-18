@@ -1,6 +1,6 @@
 import { Icon } from '@/common/headless/Icon';
 import { VideoPlayer } from '@/common/headless/VideoPlayer';
-import { Video } from '@/common/types';
+import { type Video } from '@/common/types';
 import React from 'react';
 
 type Props = {

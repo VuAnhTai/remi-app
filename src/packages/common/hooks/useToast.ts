@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import { toast, ToastContainer, ToastOptions } from 'react-toastify';
+import { toast, type ToastOptions } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const defaultOptions: ToastOptions = {

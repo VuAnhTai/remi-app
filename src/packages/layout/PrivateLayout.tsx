@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import { Children } from '../common/types';
+import { type Children } from '../common/types';
 import Navbar from '../navbar';
 import { useSocket } from '@/common/hooks/useSocket';
-import { EVENT_SOCKET, EventValues } from '@/common/constants';
+import { EVENT_SOCKET, type EventValues } from '@/common/constants';
 import { useCallback } from 'react';
 
 type Props = {
