@@ -13,9 +13,11 @@ export const Item = ({ data }: Props) => {
         <VideoPlayer url={data.url} />
       </div>
       <div className='p-3 lg:py-0'>
-        <h1 className='text-xl font-semibold'>{data.title}</h1>
-        <p>
-          Shared By: <b>{data.user.email}</b>
+        <h1 className='text-xl font-semibold' data-testid='title'>
+          {data.title}
+        </h1>
+        <p data-testid='shared-by'>
+          Shared by: <b>{data.user.email}</b>
         </p>
         <div className='flex gap-3'>
           <div className='flex gap-1'>
@@ -26,7 +28,9 @@ export const Item = ({ data }: Props) => {
           </div>
         </div>
         <p>Description:</p>
-        <p className=' text-sm text-gray-500'>{data.description}</p>
+        <p className=' text-sm text-gray-500' data-testid='desc'>
+          {data.description}
+        </p>
       </div>
     </div>
   );

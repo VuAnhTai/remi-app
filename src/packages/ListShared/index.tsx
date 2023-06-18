@@ -14,7 +14,9 @@ export const ListShared = ({ data }: Props) => {
           return <Item key={index} data={item} />;
         })
       ) : (
-        <div className='text-center'>No data</div>
+        <div className='text-center' data-testid='no-data'>
+          No data
+        </div>
       )}
     </>
   );

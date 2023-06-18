@@ -19,5 +19,9 @@ export const VideoPlayer = ({ url, opts }: Props) => {
   };
   const videoId = extractVideoId(url);
 
-  return <YouTube className='w-full h-full' videoId={videoId} opts={{ ...defaultOpts, opts }} />;
+  return (
+    <div data-testid='video'>
+      <YouTube className='w-full h-full' videoId={videoId} opts={{ ...defaultOpts, opts }} />
+    </div>
+  );
 };
