@@ -12,7 +12,6 @@
 // You can read more here:
 // https://on.cypress.io/configuration
 // ***********************************************************
-require('cypress-wait-until');
 import '@testing-library/cypress/add-commands';
 // Import commands.js using ES2015 syntax:
 import './commands';
