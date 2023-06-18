@@ -1,6 +1,20 @@
-# MUST IGNORE .env file
+## Remi Frontend
+
+- Youtube Video Sharing App
+
+## Description
+
+- Purpose: This project is to build a video sharing app like Youtube.
+- Overview: This project is built with NextJS, ReactJS, TailwindCSS, SocketIO, and Cypress.
+- Key Feature:
+  - User can register, login, logout, and update profile.
+  - User can share video from Youtube by providing video link.
+  - User can like, dislike, comment, and reply to a video.
+  - Notification when someone shares a video.
 
 # Make sure you prepare API for app
+
+Contact with vuanhtai1997@gmail.com to get source API
 
 ## Reference
 
