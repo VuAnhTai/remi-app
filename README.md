@@ -14,7 +14,8 @@
 
 # Make sure you prepare API for app
 
-Contact with vuanhtai1997@gmail.com to get source API
+Contact with vuanhtai1997@gmail.com to get source API and run it on your local machine.
+or you can change NEXT_PUBLIC_API_URI in .env file to https://api.vat-info.online
 
 ## Reference
 
@@ -74,7 +75,7 @@ https://github.com/airbnb/javascript/tree/master/react
 
 # Test component
 # 1. Run check CI/CD
-`npm run component:ci`
+`npm run component:headless`
 # 2. Run to develop
 `npm run component`
 ```
