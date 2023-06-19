@@ -34,13 +34,14 @@ https://github.com/airbnb/javascript/tree/master/react
 
 ## Install
 
-````bash
-## Add package
 ```bash
+# Install node_modules
+`npm install`
+## Add package
 `npm install <package>`
 # for dev
 `npm install <dev_package> --save-dev
-````
+```
 
 ## For develop
 
@@ -48,7 +49,6 @@ https://github.com/airbnb/javascript/tree/master/react
 # 1. Change .env.example => .env
 # 2. Run local API or change NEXT_PUBLIC_API_URI
 # 3. Start app with dev
-`npm install`
 `npm run dev`
 ```
 
@@ -58,7 +58,6 @@ https://github.com/airbnb/javascript/tree/master/react
 # 1. Change .env.example => .env
 # 2. Run local API or change NEXT_PUBLIC_API_URI
 # 3. Build app
-`npm install`
 `npm run build`
 # 4. Start app with start
 `npm run start`
