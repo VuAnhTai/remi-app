@@ -23,10 +23,6 @@ export const useSocket = ({ on }: Socket) => {
 
     // Add event listeners or perform socket operations here
     socket.on(EVENT_SOCKET.NOTIFICATION, (data: Video) => {
-      if (data.user.email === email) {
-        return;
-      }
-
       on?.(EVENT_SOCKET.NOTIFICATION, data);
 
       toastInfo(
